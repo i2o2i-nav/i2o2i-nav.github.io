@@ -111,6 +111,13 @@
       "output": "assets/results.json",
       "output_sha256": "58fa98c3e3b891668527a4e14078277c3116dccfa63cbed1f72cf46963295642",
       "operation": "Exact metric strings and bold flags extracted from current arXiv LaTeX tables; static HTML generated without recalculation."
+    },
+    {
+      "source": "arxiv/main.pdf",
+      "source_sha256": "e800e83df1c0323c520a15647046bbe128cf84cb1081cf253c571fe699c140df",
+      "output": "assets/papers/i2o2i-nav-arxiv.pdf",
+      "output_sha256": "e800e83df1c0323c520a15647046bbe128cf84cb1081cf253c571fe699c140df",
+      "operation": "Byte-for-byte copy of current arXiv manuscript, including author order and affiliations; no PDF edits."
     }
   ]
 }

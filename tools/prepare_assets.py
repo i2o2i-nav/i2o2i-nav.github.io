@@ -143,9 +143,10 @@ def main():
                for (key, relative), count in zip(sources.items(), [14, 15, 10])}
     assert [len(results[key]) for key in sources] == [4, 2, 2], "Unexpected result table structure"
     panels = []
+    level_titles = ["Level 1 · Independent primitives", "Level 2 · Two-stage compositions", "Level 3 · Full mission"]
     for i, key in enumerate(sources, 1):
-        hidden = "" if i == 1 else " hidden"
-        panels.append(f'<div id="result-panel-{i}" role="tabpanel" aria-labelledby="result-tab-{i}" tabindex="0"{hidden}>')
+        panels.append(f'<div id="result-panel-{i}" class="result-level" aria-labelledby="result-level-{i}-title">')
+        panels.append(f'<h3 id="result-level-{i}-title">{level_titles[i - 1]}</h3>')
         if key == "l1":
             panels.append(table("L1 · Exit, Entrance, and OVON", ["Method"] + ["SR ↑", "SPL ↑", "TL (m)"] * 3,
                                 [row[:10] for row in results[key]], [("Exit", 3), ("Entrance", 3), ("OVON", 3)]))

@@ -36,14 +36,14 @@
     <header class="hero" id="top">
       <p class="eyebrow">A continuous journey across environments</p>
       <h1>I2O2I-Nav</h1>
-      <p class="subtitle">A Benchmark with a Modular Agent for Long-Horizon Indoor-to-Outdoor-to-Indoor Navigation</p>
+      <p class="subtitle"><span class="subtitle-line">A Benchmark with a Modular Agent for Long-Horizon</span> <span class="subtitle-line">Indoor-to-Outdoor-to-Indoor Navigation</span></p>
       <div class="authors" aria-label="Authors">
         <div class="author-row">
           <span><a href="https://openreview.net/profile?id=~Zhengjie_SHU1" target="_blank" rel="noopener noreferrer">Zhengjie Shu</a><sup>1,2,*</sup></span>
           <span><a href="https://openreview.net/profile?id=~Wanyu_Li3" target="_blank" rel="noopener noreferrer">Wanyu Li</a><sup>2,*</sup></span>
           <span><a href="https://openreview.net/profile?id=~Di_Xiao4" target="_blank" rel="noopener noreferrer">Di Xiao</a><sup>2,*</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Lingxin_Jiang1" target="_blank" rel="noopener noreferrer">Lingxin Jiang</a><sup>5</sup></span>
           <span><a href="https://openreview.net/profile?id=~Lai_Jiang6" target="_blank" rel="noopener noreferrer">Lai Jiang</a><sup>2</sup></span>
-          <span><a href="https://openreview.net/profile?id=~Lingxin_Jiang1" target="_blank" rel="noopener noreferrer">Lingxin Jiang</a></span>
           <span><a href="https://openreview.net/profile?id=~Kaidi_Hu1" target="_blank" rel="noopener noreferrer">Kaidi Hu</a><sup>2</sup></span>
           <span><a href="https://openreview.net/profile?id=~Xincheng_Tang2" target="_blank" rel="noopener noreferrer">Xincheng Tang</a><sup>2</sup></span>
         </div>
@@ -62,20 +62,21 @@
         <span><sup>2</sup> Shanghai Jiao Tong University</span>
         <span><sup>3</sup> Nanjing University</span>
         <span><sup>4</sup> Neowa</span>
+        <span><sup>5</sup> Independent Researcher</span>
       </div>
       <p class="author-notes">* Co-first authors (equal contribution). &nbsp; † Corresponding authors.</p>
       <div class="quick-links" aria-label="Project resources">
-        <a href="assets/papers/i2o2i-nav-project-page.pdf" target="_blank" rel="noopener">[Paper PDF]</a>
-        <a href="https://github.com/i2o2i-nav/i2o2i_nav" target="_blank" rel="noopener noreferrer">[Code]</a>
-        <a href="#demo">[Video]</a>
-        <a href="#citation">[BibTeX]</a>
+        <a href="assets/papers/i2o2i-nav-arxiv.pdf" target="_blank" rel="noopener">Paper PDF</a>
+        <button class="resource-pending" type="button" disabled aria-label="arXiv link coming soon" title="arXiv link coming soon">arXiv <span>Coming soon</span></button>
+        <a href="https://github.com/i2o2i-nav/i2o2i_nav" target="_blank" rel="noopener noreferrer">Code</a>
+        <a href="#demo">Video</a>
+        <a href="#citation">BibTeX</a>
       </div>
-      <figure id="demo" class="hero-video">
-        <video id="navigation-video" controls muted playsinline preload="metadata" poster="assets/images/navigation-poster.jpg" width="1280" height="720" aria-label="Trajectory-following demonstration through indoor and outdoor environments">
-          <source src="assets/videos/navigation-demo.mp4" type="video/mp4">
-          Your browser does not support embedded video. <a href="assets/videos/navigation-demo.mp4">Download the demonstration.</a>
-        </video>
-        <figcaption>A journey from one building to another, through stairs, outdoor routes, and a destination entrance. This trajectory-following demonstration illustrates the environment and task stages; it is not a MODULAR-Agent evaluation rollout. Playback-speed labels are retained from the source video.</figcaption>
+      <figure>
+        <a class="figure-link" href="assets/images/mission-overview.webp" target="_blank" rel="noopener" aria-label="Open the full mission overview image">
+          <img src="assets/images/mission-overview.webp" alt="Four-stage I2O2I mission: Exit, OutdoorNav, Entrance, and open-vocabulary object navigation, with an illustrative route." loading="lazy" decoding="async" width="2400" height="1502">
+        </a>
+        <figcaption>Four stages, two indoor–outdoor transitions, one continuous mission. Click any figure to view it at full size.</figcaption>
       </figure>
     </header>
 
@@ -90,11 +91,12 @@
         <div><strong>1,374</strong><span>evaluation episodes</span></div>
         <div><strong>3</strong><span>levels of composition</span></div>
       </div>
-      <figure>
-        <a class="figure-link" href="assets/images/mission-overview.webp" target="_blank" rel="noopener" aria-label="Open the full mission overview image">
-          <img src="assets/images/mission-overview.webp" alt="Four-stage I2O2I mission: Exit, OutdoorNav, Entrance, and open-vocabulary object navigation, with an illustrative route." loading="lazy" decoding="async" width="2400" height="1502">
-        </a>
-        <figcaption>Four stages, two indoor–outdoor transitions, one continuous mission. Click any figure to view it at full size.</figcaption>
+      <figure id="demo" class="hero-video">
+        <video id="navigation-video" controls muted playsinline preload="metadata" poster="assets/images/navigation-poster.jpg" width="1280" height="720" aria-label="Trajectory-following demonstration through indoor and outdoor environments">
+          <source src="assets/videos/navigation-demo.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="assets/videos/navigation-demo.mp4">Download the demonstration.</a>
+        </video>
+        <figcaption>A journey from one building to another, through stairs, outdoor routes, and a destination entrance. This trajectory-following demonstration illustrates the environment and task stages; it is not a MODULAR-Agent evaluation rollout. Playback-speed labels are retained from the source video.</figcaption>
       </figure>
     </section>
 
@@ -137,25 +139,54 @@
     </section>
 
     <section id="tasks" aria-labelledby="tasks-title">
-      <h2 id="tasks-title">Three Levels of Compositional Difficulty</h2>
-      <p>Moving between stages means switching the active task while retaining the robot's actual position and orientation. Composed episodes run without simulator resets.</p>
-      <div class="task-level">
-        <div class="level-heading"><span class="level-number">L1</span><div><h3>Independent primitives</h3><p>200 episodes per primitive</p></div></div>
-        <div class="primitives">
-          <article><span class="stage-label">01 / Exit</span><p>Find an exit, physically cross the boundary, and stop in a valid outdoor region.</p></article>
-          <article><span class="stage-label">02 / OutdoorNav</span><p>Reach an outdoor goal while following a reference route and respecting pedestrian-permitted regions.</p></article>
-          <article><span class="stage-label">03 / Entrance</span><p>Locate an entrance, enter the target building, and stop at a valid indoor location.</p></article>
-          <article><span class="stage-label">04 / OVON</span><p>Find a language-specified object and stop at a valid location near a matching instance.</p></article>
-        </div>
+      <div class="task-intro">
+        <h2 id="tasks-title">Three Levels of Compositional Difficulty</h2>
+        <p>Moving between stages means switching the active task while retaining the robot's actual position and orientation. Composed episodes run without simulator resets.</p>
       </div>
-      <div class="task-level">
-        <div class="level-heading"><span class="level-number">L2</span><div><h3>Two-stage compositions</h3><p>200 episodes per composition</p></div></div>
-        <div class="composition-row"><strong>I2O</strong><span class="stage-chip">Exit</span><span aria-label="then">→</span><span class="stage-chip">OutdoorNav</span></div>
-        <div class="composition-row"><strong>O2I</strong><span class="stage-chip">OutdoorNav</span><span aria-label="then">→</span><span class="stage-chip">Entrance</span></div>
-      </div>
-      <div class="task-level full-mission">
-        <div class="level-heading"><span class="level-number">L3</span><div><h3>The complete I2O2I mission</h3><p>174 episodes · All four stages must succeed</p></div></div>
-        <div class="composition-row"><span class="stage-chip">Exit</span><span aria-label="then">→</span><span class="stage-chip">OutdoorNav</span><span aria-label="then">→</span><span class="stage-chip">Entrance</span><span aria-label="then">→</span><span class="stage-chip">OVON</span></div>
+      <div class="task-hierarchy">
+        <article class="task-level" aria-labelledby="level-1-title">
+          <header class="level-heading">
+            <span class="level-number">L1</span>
+            <div><p class="level-kicker">One stage at a time</p><h3 id="level-1-title">Independent primitives</h3></div>
+            <span class="episode-count">200 episodes <small>per primitive</small></span>
+          </header>
+          <div class="primitives">
+            <div class="primitive stage-exit"><span class="stage-index">01</span><h4>Exit</h4><p>Find an exit, physically cross the boundary, and stop in a valid outdoor region.</p></div>
+            <div class="primitive stage-outdoor"><span class="stage-index">02</span><h4>OutdoorNav</h4><p>Reach an outdoor goal while following a reference route and respecting pedestrian-permitted regions.</p></div>
+            <div class="primitive stage-entrance"><span class="stage-index">03</span><h4>Entrance</h4><p>Locate an entrance, enter the target building, and stop at a valid indoor location.</p></div>
+            <div class="primitive stage-ovon"><span class="stage-index">04</span><h4>OVON</h4><p>Find a language-specified object and stop at a valid location near a matching instance.</p></div>
+          </div>
+        </article>
+        <div class="level-connector" aria-hidden="true"><span>↓</span>Compose two stages</div>
+        <article class="task-level" aria-labelledby="level-2-title">
+          <header class="level-heading">
+            <span class="level-number">L2</span>
+            <div><p class="level-kicker">Carry the state forward</p><h3 id="level-2-title">Two-stage compositions</h3></div>
+            <span class="episode-count">200 episodes <small>per composition</small></span>
+          </header>
+          <div class="compositions">
+            <div class="composition-card"><h4>I2O <span>Indoor to outdoor</span></h4><div class="composition-row"><span class="stage-chip stage-exit">Exit</span><span class="stage-arrow" aria-label="then">→</span><span class="stage-chip stage-outdoor">OutdoorNav</span></div></div>
+            <div class="composition-card"><h4>O2I <span>Outdoor to indoor</span></h4><div class="composition-row"><span class="stage-chip stage-outdoor">OutdoorNav</span><span class="stage-arrow" aria-label="then">→</span><span class="stage-chip stage-entrance">Entrance</span></div></div>
+          </div>
+        </article>
+        <div class="level-connector" aria-hidden="true"><span>↓</span>Connect the full mission</div>
+        <article class="task-level full-mission" aria-labelledby="level-3-title">
+          <header class="level-heading">
+            <span class="level-number">L3</span>
+            <div><p class="level-kicker">One continuous journey</p><h3 id="level-3-title">The complete I2O2I mission</h3></div>
+            <span class="episode-count">174 episodes <small>full missions</small></span>
+          </header>
+          <div class="mission-route" aria-label="Exit, then OutdoorNav, then Entrance, then OVON">
+            <div class="mission-stage stage-exit"><span class="stage-index">01</span><strong>Exit</strong><span>Leave the building</span></div>
+            <span class="stage-arrow" aria-hidden="true">→</span>
+            <div class="mission-stage stage-outdoor"><span class="stage-index">02</span><strong>OutdoorNav</strong><span>Traverse outdoor space</span></div>
+            <span class="stage-arrow" aria-hidden="true">→</span>
+            <div class="mission-stage stage-entrance"><span class="stage-index">03</span><strong>Entrance</strong><span>Enter the destination</span></div>
+            <span class="stage-arrow" aria-hidden="true">→</span>
+            <div class="mission-stage stage-ovon"><span class="stage-index">04</span><strong>OVON</strong><span>Find the target object</span></div>
+          </div>
+          <p class="mission-rule">All four stages must succeed.<span>Two indoor–outdoor transitions · Three stage handoffs · No resets</span></p>
+        </article>
       </div>
     </section>
 
@@ -173,13 +204,9 @@
       <h2 id="results-title">Evaluation: Composition Remains Challenging</h2>
       <p>Using the same underlying policies, MODULAR-Agent raises I2O full success from <strong>14.00% to 30.50%</strong> and O2I from <strong>12.50% to 32.50%</strong>. Full four-stage success improves from <strong>1.15% to 4.02%</strong>, while remaining low.</p>
       <p class="evaluation-context">Evaluation uses a collision-constrained kinematic agent in Isaac Sim. All methods share task episodes, observations, action interfaces, success criteria, and execution budgets.</p>
-      <div class="tabs" role="tablist" aria-label="Evaluation levels" data-tabs="results">
-        <button id="result-tab-1" class="tab active" role="tab" aria-selected="true" aria-controls="result-panel-1" tabindex="0">L1 · Primitives</button>
-        <button id="result-tab-2" class="tab" role="tab" aria-selected="false" aria-controls="result-panel-2" tabindex="-1">L2 · Compositions</button>
-        <button id="result-tab-3" class="tab" role="tab" aria-selected="false" aria-controls="result-panel-3" tabindex="-1">L3 · Full mission</button>
-      </div>
       <!-- BEGIN GENERATED RESULTS -->
-<div id="result-panel-1" role="tabpanel" aria-labelledby="result-tab-1" tabindex="0">
+<div id="result-panel-1" class="result-level" aria-labelledby="result-level-1-title">
+<h3 id="result-level-1-title">Level 1 · Independent primitives</h3>
 <div class="table-wrap" role="region" aria-label="L1 · Exit, Entrance, and OVON" tabindex="0"><table>
 <caption>L1 · Exit, Entrance, and OVON</caption><thead>
 <tr><th rowspan="2" scope="col">Method</th>
@@ -281,7 +308,8 @@
 </tbody></table></div>
 <p class="table-note">200 episodes per primitive. SR, SPL, and DCR are percentages; TL is in meters. Bold values reproduce the paper’s best-result formatting.</p>
 </div>
-<div id="result-panel-2" role="tabpanel" aria-labelledby="result-tab-2" tabindex="0" hidden>
+<div id="result-panel-2" class="result-level" aria-labelledby="result-level-2-title">
+<h3 id="result-level-2-title">Level 2 · Two-stage compositions</h3>
 <div class="table-wrap" role="region" aria-label="I2O · Exit → OutdoorNav" tabindex="0"><table>
 <caption>I2O · Exit → OutdoorNav</caption><thead>
 <tr>
@@ -350,7 +378,8 @@
 </tbody></table></div>
 <p class="table-note">200 episodes per composition. All values are percentages. C₁ and C₂ are stage-conditional success rates in task order.</p>
 </div>
-<div id="result-panel-3" role="tabpanel" aria-labelledby="result-tab-3" tabindex="0" hidden>
+<div id="result-panel-3" class="result-level" aria-labelledby="result-level-3-title">
+<h3 id="result-level-3-title">Level 3 · Full mission</h3>
 <div class="table-wrap" role="region" aria-label="L3 · Exit → OutdoorNav → Entrance → OVON" tabindex="0"><table>
 <caption>L3 · Exit → OutdoorNav → Entrance → OVON</caption><thead>
 <tr><th rowspan="2" scope="col">Method</th>
@@ -416,8 +445,8 @@
         <pre><code id="bibtex">@misc{shu2026i2o2inav,
   title = {I2O2I-Nav: A Benchmark with a Modular Agent for
            Long-Horizon Indoor-to-Outdoor-to-Indoor Navigation},
-  author = {Zhengjie Shu and Wanyu Li and Di Xiao and Lai Jiang
-            and Lingxin Jiang and Kaidi Hu and Xincheng Tang
+  author = {Zhengjie Shu and Wanyu Li and Di Xiao and Lingxin Jiang
+            and Lai Jiang and Kaidi Hu and Xincheng Tang
             and Wenkang Hu and Haoran Wang and Jinchuan Zhang
             and Chang Chen and Wei Li and Jia Pan and Ruigang Yang},
   year = {2026},
