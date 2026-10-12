@@ -1,0 +1,455 @@
+{
+  "sources": {
+    "l1": "arxiv/table/tab_02_l1_exit_entrance_ovon.tex",
+    "l2": "arxiv/table/tab_03_l2_composition.tex",
+    "l3": "arxiv/table/tab_04_l3_full_chain.tex"
+  },
+  "tables": {
+    "l1": [
+      [
+        {
+          "value": "Uni-NaVid",
+          "bold": false
+        },
+        {
+          "value": "0.00",
+          "bold": false
+        },
+        {
+          "value": "0.00",
+          "bold": false
+        },
+        {
+          "value": "1.14",
+          "bold": false
+        },
+        {
+          "value": "0.00",
+          "bold": false
+        },
+        {
+          "value": "0.00",
+          "bold": false
+        },
+        {
+          "value": "1.49",
+          "bold": false
+        },
+        {
+          "value": "7.00",
+          "bold": false
+        },
+        {
+          "value": "7.00",
+          "bold": false
+        },
+        {
+          "value": "0.59",
+          "bold": false
+        },
+        {
+          "value": "OmniNav-fast",
+          "bold": false
+        },
+        {
+          "value": "70.00",
+          "bold": false
+        },
+        {
+          "value": "66.15",
+          "bold": false
+        },
+        {
+          "value": "54.50",
+          "bold": false
+        }
+      ],
+      [
+        {
+          "value": "OmniNav",
+          "bold": false
+        },
+        {
+          "value": "29.00",
+          "bold": false
+        },
+        {
+          "value": "18.29",
+          "bold": false
+        },
+        {
+          "value": "156.11",
+          "bold": false
+        },
+        {
+          "value": "14.50",
+          "bold": false
+        },
+        {
+          "value": "10.26",
+          "bold": false
+        },
+        {
+          "value": "35.53",
+          "bold": false
+        },
+        {
+          "value": "38.00",
+          "bold": false
+        },
+        {
+          "value": "35.73",
+          "bold": true
+        },
+        {
+          "value": "21.19",
+          "bold": false
+        },
+        {
+          "value": "SocialNav",
+          "bold": false
+        },
+        {
+          "value": "74.00",
+          "bold": false
+        },
+        {
+          "value": "70.23",
+          "bold": false
+        },
+        {
+          "value": "79.39",
+          "bold": false
+        }
+      ],
+      [
+        {
+          "value": "LightNav-0",
+          "bold": false
+        },
+        {
+          "value": "20.50",
+          "bold": false
+        },
+        {
+          "value": "12.56",
+          "bold": false
+        },
+        {
+          "value": "11.22",
+          "bold": false
+        },
+        {
+          "value": "12.50",
+          "bold": false
+        },
+        {
+          "value": "10.91",
+          "bold": false
+        },
+        {
+          "value": "15.43",
+          "bold": false
+        },
+        {
+          "value": "18.50",
+          "bold": false
+        },
+        {
+          "value": "15.60",
+          "bold": false
+        },
+        {
+          "value": "15.08",
+          "bold": false
+        },
+        {
+          "value": "MODULAR-Agent (O)",
+          "bold": false
+        },
+        {
+          "value": "74.00",
+          "bold": false
+        },
+        {
+          "value": "69.32",
+          "bold": false
+        },
+        {
+          "value": "55.35",
+          "bold": false
+        }
+      ],
+      [
+        {
+          "value": "MODULAR-Agent (O)",
+          "bold": true
+        },
+        {
+          "value": "45.50",
+          "bold": true
+        },
+        {
+          "value": "29.56",
+          "bold": true
+        },
+        {
+          "value": "74.54",
+          "bold": false
+        },
+        {
+          "value": "51.00",
+          "bold": true
+        },
+        {
+          "value": "30.78",
+          "bold": true
+        },
+        {
+          "value": "48.02",
+          "bold": false
+        },
+        {
+          "value": "40.50",
+          "bold": true
+        },
+        {
+          "value": "32.26",
+          "bold": false
+        },
+        {
+          "value": "46.28",
+          "bold": false
+        },
+        {
+          "value": "MODULAR-Agent (S)",
+          "bold": true
+        },
+        {
+          "value": "76.00",
+          "bold": true
+        },
+        {
+          "value": "70.60",
+          "bold": true
+        },
+        {
+          "value": "80.06",
+          "bold": true
+        }
+      ]
+    ],
+    "l2": [
+      [
+        {
+          "value": "OmniNav + SocialNav",
+          "bold": false
+        },
+        {
+          "value": "14.00",
+          "bold": false
+        },
+        {
+          "value": "17.25",
+          "bold": false
+        },
+        {
+          "value": "11.90",
+          "bold": false
+        },
+        {
+          "value": "28.50",
+          "bold": false
+        },
+        {
+          "value": "42.24",
+          "bold": false
+        },
+        {
+          "value": "20.50",
+          "bold": false
+        },
+        {
+          "value": "68.29",
+          "bold": false
+        },
+        {
+          "value": "12.50",
+          "bold": false
+        },
+        {
+          "value": "42.75",
+          "bold": false
+        },
+        {
+          "value": "8.78",
+          "bold": false
+        },
+        {
+          "value": "82.93",
+          "bold": true
+        },
+        {
+          "value": "53.39",
+          "bold": true
+        },
+        {
+          "value": "73.00",
+          "bold": true
+        },
+        {
+          "value": "17.12",
+          "bold": false
+        }
+      ],
+      [
+        {
+          "value": "MODULAR-Agent (O + S)",
+          "bold": true
+        },
+        {
+          "value": "30.50",
+          "bold": true
+        },
+        {
+          "value": "36.50",
+          "bold": true
+        },
+        {
+          "value": "23.41",
+          "bold": true
+        },
+        {
+          "value": "51.32",
+          "bold": true
+        },
+        {
+          "value": "57.96",
+          "bold": true
+        },
+        {
+          "value": "42.50",
+          "bold": true
+        },
+        {
+          "value": "71.76",
+          "bold": true
+        },
+        {
+          "value": "32.50",
+          "bold": true
+        },
+        {
+          "value": "52.00",
+          "bold": true
+        },
+        {
+          "value": "22.27",
+          "bold": true
+        },
+        {
+          "value": "82.43",
+          "bold": false
+        },
+        {
+          "value": "51.92",
+          "bold": false
+        },
+        {
+          "value": "71.50",
+          "bold": false
+        },
+        {
+          "value": "45.45",
+          "bold": true
+        }
+      ]
+    ],
+    "l3": [
+      [
+        {
+          "value": "OmniNav + SocialNav",
+          "bold": false
+        },
+        {
+          "value": "1.15",
+          "bold": false
+        },
+        {
+          "value": "14.22",
+          "bold": false
+        },
+        {
+          "value": "0.90",
+          "bold": false
+        },
+        {
+          "value": "35.62",
+          "bold": false
+        },
+        {
+          "value": "43.81",
+          "bold": false
+        },
+        {
+          "value": "29.89",
+          "bold": false
+        },
+        {
+          "value": "67.31",
+          "bold": false
+        },
+        {
+          "value": "28.57",
+          "bold": false
+        },
+        {
+          "value": "20.00",
+          "bold": false
+        }
+      ],
+      [
+        {
+          "value": "MODULAR-Agent (O + S)",
+          "bold": true
+        },
+        {
+          "value": "4.02",
+          "bold": true
+        },
+        {
+          "value": "26.15",
+          "bold": true
+        },
+        {
+          "value": "1.08",
+          "bold": true
+        },
+        {
+          "value": "47.79",
+          "bold": true
+        },
+        {
+          "value": "56.05",
+          "bold": true
+        },
+        {
+          "value": "45.40",
+          "bold": true
+        },
+        {
+          "value": "79.75",
+          "bold": true
+        },
+        {
+          "value": "52.38",
+          "bold": true
+        },
+        {
+          "value": "21.21",
+          "bold": true
+        }
+      ]
+    ]
+  }
+}

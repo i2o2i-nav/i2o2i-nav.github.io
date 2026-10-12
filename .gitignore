@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# Preserve earlier local PDF copies without publishing them.
+assets/papers/i2o2i-nav.pdf
+assets/papers/i2o2i-nav-organization.pdf

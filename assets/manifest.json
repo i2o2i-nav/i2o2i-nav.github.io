@@ -1,0 +1,116 @@
+{
+  "assets": [
+    {
+      "source": "arxiv/figs/benchmark_framework.png",
+      "source_sha256": "b45df2bb5e9e861792404bc07b2fee45d43fbe0196ba242c7268b6c39246219e",
+      "output": "assets/images/benchmark-framework.webp",
+      "output_sha256": "1b42759bcfe94859430d93b35613a9c5c1f62e601447a325c4c3b9b093cc8cd2",
+      "operation": "Full frame; proportional resize to at most 2400px; WebP encoding. No content edits."
+    },
+    {
+      "source": "ppt/1_scene_random1.png",
+      "source_sha256": "766ee623a439db1cfc5a84bb364d632bab9846eceb966c5e8e49cbdb1273125a",
+      "output": "assets/images/scene-views-01.webp",
+      "output_sha256": "831b8ecac4786a8910cab00f0517463e44664e68a53d537dfa602fcd926d9124",
+      "operation": "Full frame; proportional resize to at most 2400px; WebP encoding. No content edits."
+    },
+    {
+      "source": "ppt/1_scene_random2.png",
+      "source_sha256": "4f802220a76d2a5e7eb8bb046ea896ef5789646b3cbf2a70d943e714e029dadb",
+      "output": "assets/images/scene-views-02.webp",
+      "output_sha256": "5de63a83ad807e023e877cc4194b3a86d3c80a6193cb83ce1f7756a62ea4f674",
+      "operation": "Full frame; proportional resize to at most 2400px; WebP encoding. No content edits."
+    },
+    {
+      "source": "ppt/1_scene_random3.png",
+      "source_sha256": "5202eaf79ad55caee50315acb5df04df90d0ff13029d8b3d3b88e845c08dc755",
+      "output": "assets/images/scene-views-03.webp",
+      "output_sha256": "5192918a5e6cec440068c8d854a4cf8dac418381e31233f0cc9186cecf21bd43",
+      "operation": "Full frame; proportional resize to at most 2400px; WebP encoding. No content edits."
+    },
+    {
+      "source": "arxiv/appendix/a_materials/7_mesh.png",
+      "source_sha256": "88f38e1b1e2536093cb596721ce0b24ed0943411dac918ad00cb7e6e79572738",
+      "output": "assets/images/mesh-geometry.webp",
+      "output_sha256": "faa9c3d2b3473e485e51e0fcc3b31145f4aa75fafa43b609f622edf275c10e1d",
+      "operation": "Full frame; proportional resize to at most 2400px; WebP encoding. No content edits."
+    },
+    {
+      "source": "arxiv/appendix/a_materials/4_area_lable.png",
+      "source_sha256": "ccfc0b71dcb3f9f861e88c7fc638d4467cac099b3476bb040c074cc0b59527da",
+      "output": "assets/images/region-annotations.webp",
+      "output_sha256": "99ab7b7b848d1ca21b9126c0c60d658745e2dd7115927261c08e0be9f8d1da22",
+      "operation": "Full frame; proportional resize to at most 2400px; WebP encoding. No content edits."
+    },
+    {
+      "source": "arxiv/appendix/a_materials/5_object_lable_object.png",
+      "source_sha256": "4bf2d2735ae1d6ca9b3e28565d5ca121f471659ca6c8a8cd3680c73412a70064",
+      "output": "assets/images/object-annotations.webp",
+      "output_sha256": "790d3ef4fb50299fe8d09b5c2505727ac1860d402f9b63ee2a8bd03c9610c551",
+      "operation": "Full frame; proportional resize to at most 2400px; WebP encoding. No content edits."
+    },
+    {
+      "source": "arxiv/figs/l1_failed_cases.png",
+      "source_sha256": "06271155ad39d602b2b78c47be9fe66cc1e38b14276ee2a36352d2b6bc80ff51",
+      "output": "assets/images/failure-cases.webp",
+      "output_sha256": "0ec78a81421a43d0031155a6e2a5471620d3cf0822ef4a181e03d54c96e3b5d9",
+      "operation": "Full frame; proportional resize to at most 2400px; WebP encoding. No content edits."
+    },
+    {
+      "source": "arxiv/figs/cover.pdf",
+      "source_sha256": "155c16de972cb2f91fbbca264fe7ba15b4b256d5c56d02f17aaf471901e79549",
+      "output": "assets/images/mission-overview.webp",
+      "output_sha256": "58bc4de4dc2ccecf47d7ce125381377f1b0c7c72bbe9e5d9848b6b3ab352c6df",
+      "operation": "Full frame; proportional resize to at most 2400px; WebP encoding. No content edits."
+    },
+    {
+      "source": "arxiv/figs/agent_system.pdf",
+      "source_sha256": "98e477071e262bb44fe8787ca731c97b1a2c43c58b110f8a0557f0abc4ae198e",
+      "output": "assets/images/modular-agent.webp",
+      "output_sha256": "4f029a50176cc9b5a2a310cc3c442c2c6a9df16b727eb5a296379844226584ef",
+      "operation": "Full frame; proportional resize to at most 2400px; WebP encoding. No content edits."
+    },
+    {
+      "source": "ppt/i2o2i_nav_supplementary_v04_submit.mp4",
+      "source_sha256": "e05bf10722ef61e8338eae6dd95e5b7d2ba7bacae1e04a6c6ebb2f5556845dee",
+      "output": "assets/videos/navigation-demo.mp4",
+      "output_sha256": "2d486dca72325c76c333fdf4c4bea18688e002fdb57b31aa21abb0a2de36a31d",
+      "operation": "Extract [67,198) seconds (complete trajectory-following segment); proportional 1280px encoding; no additional speed change. Original speed badges retained. Not an agent evaluation rollout."
+    },
+    {
+      "source": "ppt/i2o2i_nav_supplementary_v04_submit.mp4",
+      "source_sha256": "e05bf10722ef61e8338eae6dd95e5b7d2ba7bacae1e04a6c6ebb2f5556845dee",
+      "output": "assets/images/navigation-poster.jpg",
+      "output_sha256": "bfeae75e9220807ab78d115ea34e19fd80a7fce82f4026155791a3e4fa0c4e86",
+      "operation": "Full-frame poster at 35s in the extracted video (102s in supplementary video)."
+    },
+    {
+      "source": "arxiv/release_20261012/main_project_page.pdf",
+      "source_sha256": "f8e595f8ce7ae9d600430bf6b6d9f4ac58e7725b6beb5db63055e13a37afc51e",
+      "output": "assets/papers/i2o2i-nav-project-page.pdf",
+      "output_sha256": "f8e595f8ce7ae9d600430bf6b6d9f4ac58e7725b6beb5db63055e13a37afc51e",
+      "operation": "Byte-for-byte copy of the project-page release; no PDF edits."
+    },
+    {
+      "source": "arxiv/table/tab_02_l1_exit_entrance_ovon.tex",
+      "source_sha256": "46512fc0bc4cc1c1c89ca99a917baf443c12908e2b6fb4943fc6a1fb20b81b84",
+      "output": "assets/results.json",
+      "output_sha256": "58fa98c3e3b891668527a4e14078277c3116dccfa63cbed1f72cf46963295642",
+      "operation": "Exact metric strings and bold flags extracted from current arXiv LaTeX tables; static HTML generated without recalculation."
+    },
+    {
+      "source": "arxiv/table/tab_03_l2_composition.tex",
+      "source_sha256": "4640ea553cb52041c7fbc87e3c6aabc1d5262391326325713bb963cc923c443b",
+      "output": "assets/results.json",
+      "output_sha256": "58fa98c3e3b891668527a4e14078277c3116dccfa63cbed1f72cf46963295642",
+      "operation": "Exact metric strings and bold flags extracted from current arXiv LaTeX tables; static HTML generated without recalculation."
+    },
+    {
+      "source": "arxiv/table/tab_04_l3_full_chain.tex",
+      "source_sha256": "24243a5cd719da75e5283c0e4d1027b536bde3cf8793c55ed7b5fa7069c80071",
+      "output": "assets/results.json",
+      "output_sha256": "58fa98c3e3b891668527a4e14078277c3116dccfa63cbed1f72cf46963295642",
+      "operation": "Exact metric strings and bold flags extracted from current arXiv LaTeX tables; static HTML generated without recalculation."
+    }
+  ]
+}

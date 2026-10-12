@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="I2O2I-Nav: a benchmark with a modular agent for continuous, long-horizon indoor-to-outdoor-to-indoor navigation in 20 reconstructed real-world scenes.">
+  <meta name="theme-color" content="#f5f5f5">
+  <meta property="og:title" content="I2O2I-Nav">
+  <meta property="og:description" content="A Benchmark with a Modular Agent for Long-Horizon Indoor-to-Outdoor-to-Indoor Navigation">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://i2o2i-nav.github.io/">
+  <meta property="og:image" content="https://i2o2i-nav.github.io/assets/images/mission-overview.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>I2O2I-Nav | Long-Horizon Indoor-to-Outdoor-to-Indoor Navigation</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="toc" aria-label="Contents">
+    <a class="toc-brand" href="#top">I2O2I-Nav<span>Indoor · Outdoor · Indoor</span></a>
+    <p class="toc-label">Contents</p>
+    <a href="#overview">Overview</a>
+    <a href="#benchmark">Benchmark</a>
+    <a href="#scenes">Scene gallery</a>
+    <a href="#tasks">Task hierarchy</a>
+    <a href="#agent">MODULAR-Agent</a>
+    <a href="#results">Evaluation</a>
+    <a href="#failures">Failure analysis</a>
+    <a href="#citation">Citation</a>
+    <a class="toc-repository" href="https://github.com/i2o2i-nav/i2o2i_nav" target="_blank" rel="noopener noreferrer">Project repository ↗</a>
+  </nav>
+
+  <main id="main" class="main-content">
+    <header class="hero" id="top">
+      <p class="eyebrow">A continuous journey across environments</p>
+      <h1>I2O2I-Nav</h1>
+      <p class="subtitle">A Benchmark with a Modular Agent for Long-Horizon Indoor-to-Outdoor-to-Indoor Navigation</p>
+      <div class="authors" aria-label="Authors">
+        <div class="author-row">
+          <span><a href="https://openreview.net/profile?id=~Zhengjie_SHU1" target="_blank" rel="noopener noreferrer">Zhengjie Shu</a><sup>1,2,*</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Wanyu_Li3" target="_blank" rel="noopener noreferrer">Wanyu Li</a><sup>2,*</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Di_Xiao4" target="_blank" rel="noopener noreferrer">Di Xiao</a><sup>2,*</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Lai_Jiang6" target="_blank" rel="noopener noreferrer">Lai Jiang</a><sup>2</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Lingxin_Jiang1" target="_blank" rel="noopener noreferrer">Lingxin Jiang</a></span>
+          <span><a href="https://openreview.net/profile?id=~Kaidi_Hu1" target="_blank" rel="noopener noreferrer">Kaidi Hu</a><sup>2</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Xincheng_Tang2" target="_blank" rel="noopener noreferrer">Xincheng Tang</a><sup>2</sup></span>
+        </div>
+        <div class="author-row">
+          <span><a href="https://openreview.net/profile?id=~Wenkang_Hu3" target="_blank" rel="noopener noreferrer">Wenkang Hu</a><sup>2</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Haoran_Wang27" target="_blank" rel="noopener noreferrer">Haoran Wang</a><sup>2</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Jinchuan_Zhang3" target="_blank" rel="noopener noreferrer">Jinchuan Zhang</a><sup>1</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Chang_Chen6" target="_blank" rel="noopener noreferrer">Chang Chen</a><sup>1</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Wei_Li28" target="_blank" rel="noopener noreferrer">Wei Li</a><sup>3</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Jia_Pan1" target="_blank" rel="noopener noreferrer">Jia Pan</a><sup>1,†</sup></span>
+          <span><a href="https://openreview.net/profile?id=~Ruigang_Yang1" target="_blank" rel="noopener noreferrer">Ruigang Yang</a><sup>2,4,†</sup></span>
+        </div>
+      </div>
+      <div class="affiliations">
+        <span><sup>1</sup> University of Hong Kong</span>
+        <span><sup>2</sup> Shanghai Jiao Tong University</span>
+        <span><sup>3</sup> Nanjing University</span>
+        <span><sup>4</sup> Neowa</span>
+      </div>
+      <p class="author-notes">* Co-first authors (equal contribution). &nbsp; † Corresponding authors.</p>
+      <div class="quick-links" aria-label="Project resources">
+        <a href="assets/papers/i2o2i-nav-project-page.pdf" target="_blank" rel="noopener">[Paper PDF]</a>
+        <a href="https://github.com/i2o2i-nav/i2o2i_nav" target="_blank" rel="noopener noreferrer">[Code]</a>
+        <a href="#demo">[Video]</a>
+        <a href="#citation">[BibTeX]</a>
+      </div>
+      <figure id="demo" class="hero-video">
+        <video id="navigation-video" controls muted playsinline preload="metadata" poster="assets/images/navigation-poster.jpg" width="1280" height="720" aria-label="Trajectory-following demonstration through indoor and outdoor environments">
+          <source src="assets/videos/navigation-demo.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="assets/videos/navigation-demo.mp4">Download the demonstration.</a>
+        </video>
+        <figcaption>A journey from one building to another, through stairs, outdoor routes, and a destination entrance. This trajectory-following demonstration illustrates the environment and task stages; it is not a MODULAR-Agent evaluation rollout. Playback-speed labels are retained from the source video.</figcaption>
+      </figure>
+    </header>
+
+    <section id="overview" aria-labelledby="overview-title">
+      <h2 id="overview-title">Overview</h2>
+      <p class="section-lead">A robot's journey does not end at the doorway.</p>
+      <p>Service and delivery robots need to leave buildings, traverse outdoor spaces, enter a destination building, and find an object inside. <strong>I2O2I-Nav</strong> evaluates how these capabilities compose into a single, continuous mission.</p>
+      <p>The benchmark pairs reconstructed real-world environments with aligned 3D Gaussian Splatting (3DGS) rendering and collision geometry. Its three-level evaluation progresses from independent navigation primitives to two-stage compositions and full indoor-to-outdoor-to-indoor missions. Each stage continues from its predecessor's actual endpoint.</p>
+      <div class="stats" aria-label="Benchmark statistics">
+        <div><strong>20</strong><span>real-world composite scenes</span></div>
+        <div><strong>115,602.9 <small>m²</small></strong><span>total annotated area</span></div>
+        <div><strong>1,374</strong><span>evaluation episodes</span></div>
+        <div><strong>3</strong><span>levels of composition</span></div>
+      </div>
+      <figure>
+        <a class="figure-link" href="assets/images/mission-overview.webp" target="_blank" rel="noopener" aria-label="Open the full mission overview image">
+          <img src="assets/images/mission-overview.webp" alt="Four-stage I2O2I mission: Exit, OutdoorNav, Entrance, and open-vocabulary object navigation, with an illustrative route." loading="lazy" decoding="async" width="2400" height="1502">
+        </a>
+        <figcaption>Four stages, two indoor–outdoor transitions, one continuous mission. Click any figure to view it at full size.</figcaption>
+      </figure>
+    </section>
+
+    <section id="benchmark" aria-labelledby="benchmark-title">
+      <h2 id="benchmark-title">From Real-World Scenes to Executable Missions</h2>
+      <p>Real-world scans are processed into environments with visual reconstruction, collision geometry, navigation maps, and object- and area-level annotations. Building and floor labels define goals and boundary checks; evaluator annotations are withheld from navigation methods.</p>
+      <figure>
+        <a class="figure-link" href="assets/images/benchmark-framework.webp" target="_blank" rel="noopener" aria-label="Open the benchmark construction and task hierarchy figure">
+          <img src="assets/images/benchmark-framework.webp" alt="Benchmark construction pipeline from scanning to scene processing and annotation, alongside the three-level task hierarchy." loading="lazy" decoding="async" width="2400" height="1098">
+        </a>
+        <figcaption>Benchmark construction and hierarchical task definition, reproduced from the paper.</figcaption>
+      </figure>
+    </section>
+
+    <section id="scenes" aria-labelledby="scenes-title">
+      <h2 id="scenes-title">Connected Indoor–Outdoor Environments</h2>
+      <p>The 20 composite scenes span schools, offices, residences, shopping areas, and parks, connecting multiple buildings and floors. Explore sampled views and reconstructed mesh geometry below.</p>
+      <div class="tabs" role="tablist" aria-label="Scene gallery views" data-tabs="scenes">
+        <button id="scene-tab-1" class="tab active" role="tab" aria-selected="true" aria-controls="scene-panel-1" tabindex="0">Scene views 01</button>
+        <button id="scene-tab-2" class="tab" role="tab" aria-selected="false" aria-controls="scene-panel-2" tabindex="-1">Scene views 02</button>
+        <button id="scene-tab-3" class="tab" role="tab" aria-selected="false" aria-controls="scene-panel-3" tabindex="-1">Scene views 03</button>
+        <button id="scene-tab-4" class="tab" role="tab" aria-selected="false" aria-controls="scene-panel-4" tabindex="-1">Mesh geometry</button>
+      </div>
+      <div id="scene-panel-1" role="tabpanel" aria-labelledby="scene-tab-1" tabindex="0">
+        <figure><a class="figure-link" href="assets/images/scene-views-01.webp" target="_blank" rel="noopener"><img src="assets/images/scene-views-01.webp" alt="First collection of sampled views from reconstructed benchmark environments." loading="lazy" decoding="async" width="2400" height="1116"></a><figcaption>Scene views 01 · Sampled environment views.</figcaption></figure>
+      </div>
+      <div id="scene-panel-2" role="tabpanel" aria-labelledby="scene-tab-2" tabindex="0" hidden>
+        <figure><a class="figure-link" href="assets/images/scene-views-02.webp" target="_blank" rel="noopener"><img src="assets/images/scene-views-02.webp" alt="Second collection of sampled views from reconstructed benchmark environments." loading="lazy" decoding="async" width="2400" height="1116"></a><figcaption>Scene views 02 · Sampled environment views.</figcaption></figure>
+      </div>
+      <div id="scene-panel-3" role="tabpanel" aria-labelledby="scene-tab-3" tabindex="0" hidden>
+        <figure><a class="figure-link" href="assets/images/scene-views-03.webp" target="_blank" rel="noopener"><img src="assets/images/scene-views-03.webp" alt="Third collection of sampled views from reconstructed benchmark environments." loading="lazy" decoding="async" width="2400" height="1116"></a><figcaption>Scene views 03 · Sampled environment views.</figcaption></figure>
+      </div>
+      <div id="scene-panel-4" role="tabpanel" aria-labelledby="scene-tab-4" tabindex="0" hidden>
+        <figure><a class="figure-link" href="assets/images/mesh-geometry.webp" target="_blank" rel="noopener"><img src="assets/images/mesh-geometry.webp" alt="Sampled reconstructed mesh geometry from benchmark environments." loading="lazy" decoding="async" width="2400" height="1362"></a><figcaption>Reconstructed mesh geometry. Panels are not claimed to correspond one-to-one with the scene-view grids.</figcaption></figure>
+      </div>
+      <div class="annotation-grid">
+        <figure><a class="figure-link" href="assets/images/region-annotations.webp" target="_blank" rel="noopener"><img src="assets/images/region-annotations.webp" alt="Outdoor area annotations used to identify region types and pedestrian-permitted traversal." loading="lazy" decoding="async" width="2228" height="1991"></a><figcaption>Area and region annotations</figcaption></figure>
+        <figure><a class="figure-link" href="assets/images/object-annotations.webp" target="_blank" rel="noopener"><img src="assets/images/object-annotations.webp" alt="Object-level annotations used to define language-specified navigation goals." loading="lazy" decoding="async" width="1244" height="700"></a><figcaption>Object-goal annotations</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="tasks" aria-labelledby="tasks-title">
+      <h2 id="tasks-title">Three Levels of Compositional Difficulty</h2>
+      <p>Moving between stages means switching the active task while retaining the robot's actual position and orientation. Composed episodes run without simulator resets.</p>
+      <div class="task-level">
+        <div class="level-heading"><span class="level-number">L1</span><div><h3>Independent primitives</h3><p>200 episodes per primitive</p></div></div>
+        <div class="primitives">
+          <article><span class="stage-label">01 / Exit</span><p>Find an exit, physically cross the boundary, and stop in a valid outdoor region.</p></article>
+          <article><span class="stage-label">02 / OutdoorNav</span><p>Reach an outdoor goal while following a reference route and respecting pedestrian-permitted regions.</p></article>
+          <article><span class="stage-label">03 / Entrance</span><p>Locate an entrance, enter the target building, and stop at a valid indoor location.</p></article>
+          <article><span class="stage-label">04 / OVON</span><p>Find a language-specified object and stop at a valid location near a matching instance.</p></article>
+        </div>
+      </div>
+      <div class="task-level">
+        <div class="level-heading"><span class="level-number">L2</span><div><h3>Two-stage compositions</h3><p>200 episodes per composition</p></div></div>
+        <div class="composition-row"><strong>I2O</strong><span class="stage-chip">Exit</span><span aria-label="then">→</span><span class="stage-chip">OutdoorNav</span></div>
+        <div class="composition-row"><strong>O2I</strong><span class="stage-chip">OutdoorNav</span><span aria-label="then">→</span><span class="stage-chip">Entrance</span></div>
+      </div>
+      <div class="task-level full-mission">
+        <div class="level-heading"><span class="level-number">L3</span><div><h3>The complete I2O2I mission</h3><p>174 episodes · All four stages must succeed</p></div></div>
+        <div class="composition-row"><span class="stage-chip">Exit</span><span aria-label="then">→</span><span class="stage-chip">OutdoorNav</span><span aria-label="then">→</span><span class="stage-chip">Entrance</span><span aria-label="then">→</span><span class="stage-chip">OVON</span></div>
+      </div>
+    </section>
+
+    <section id="agent" aria-labelledby="agent-title">
+      <h2 id="agent-title">MODULAR-Agent</h2>
+      <p class="section-lead">Plan. Execute. Verify. Recover.</p>
+      <p>A vision-language model coordinates frozen navigation policies through a reusable skills library. State estimation informs workflow and subtask planning; execution feedback drives completion verification, stage handoffs, and bounded recovery.</p>
+      <figure>
+        <a class="figure-link" href="assets/images/modular-agent.webp" target="_blank" rel="noopener" aria-label="Open the MODULAR-Agent architecture figure"><img src="assets/images/modular-agent.webp" alt="MODULAR-Agent architecture: a VLM coordinates a skill library and navigation policy library through state estimation, workflow and subtask planning, and verification and replanning." loading="lazy" decoding="async" width="2400" height="1199"></a>
+        <figcaption>The architecture shows the supported module scope. In L2/L3 evaluation, OmniNav executes Exit, Entrance, and OVON; SocialNav executes OutdoorNav. Evaluated inputs and backends are specified in the paper.</figcaption>
+      </figure>
+    </section>
+
+    <section id="results" aria-labelledby="results-title">
+      <h2 id="results-title">Evaluation: Composition Remains Challenging</h2>
+      <p>Using the same underlying policies, MODULAR-Agent raises I2O full success from <strong>14.00% to 30.50%</strong> and O2I from <strong>12.50% to 32.50%</strong>. Full four-stage success improves from <strong>1.15% to 4.02%</strong>, while remaining low.</p>
+      <p class="evaluation-context">Evaluation uses a collision-constrained kinematic agent in Isaac Sim. All methods share task episodes, observations, action interfaces, success criteria, and execution budgets.</p>
+      <div class="tabs" role="tablist" aria-label="Evaluation levels" data-tabs="results">
+        <button id="result-tab-1" class="tab active" role="tab" aria-selected="true" aria-controls="result-panel-1" tabindex="0">L1 · Primitives</button>
+        <button id="result-tab-2" class="tab" role="tab" aria-selected="false" aria-controls="result-panel-2" tabindex="-1">L2 · Compositions</button>
+        <button id="result-tab-3" class="tab" role="tab" aria-selected="false" aria-controls="result-panel-3" tabindex="-1">L3 · Full mission</button>
+      </div>
+      <!-- BEGIN GENERATED RESULTS -->
+<div id="result-panel-1" role="tabpanel" aria-labelledby="result-tab-1" tabindex="0">
+<div class="table-wrap" role="region" aria-label="L1 · Exit, Entrance, and OVON" tabindex="0"><table>
+<caption>L1 · Exit, Entrance, and OVON</caption><thead>
+<tr><th rowspan="2" scope="col">Method</th>
+<th colspan="3" scope="colgroup">Exit</th>
+<th colspan="3" scope="colgroup">Entrance</th>
+<th colspan="3" scope="colgroup">OVON</th>
+</tr><tr>
+<th scope="col">SR ↑</th>
+<th scope="col">SPL ↑</th>
+<th scope="col">TL (m)</th>
+<th scope="col">SR ↑</th>
+<th scope="col">SPL ↑</th>
+<th scope="col">TL (m)</th>
+<th scope="col">SR ↑</th>
+<th scope="col">SPL ↑</th>
+<th scope="col">TL (m)</th>
+</tr></thead><tbody>
+<tr>
+<th scope="row">Uni-NaVid</th>
+<td>0.00</td>
+<td>0.00</td>
+<td>1.14</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>1.49</td>
+<td>7.00</td>
+<td>7.00</td>
+<td>0.59</td>
+</tr>
+<tr>
+<th scope="row">OmniNav</th>
+<td>29.00</td>
+<td>18.29</td>
+<td>156.11</td>
+<td>14.50</td>
+<td>10.26</td>
+<td>35.53</td>
+<td>38.00</td>
+<td><strong>35.73</strong></td>
+<td>21.19</td>
+</tr>
+<tr>
+<th scope="row">LightNav-0</th>
+<td>20.50</td>
+<td>12.56</td>
+<td>11.22</td>
+<td>12.50</td>
+<td>10.91</td>
+<td>15.43</td>
+<td>18.50</td>
+<td>15.60</td>
+<td>15.08</td>
+</tr>
+<tr class="agent-row">
+<th scope="row"><strong>MODULAR-Agent (O)</strong></th>
+<td><strong>45.50</strong></td>
+<td><strong>29.56</strong></td>
+<td>74.54</td>
+<td><strong>51.00</strong></td>
+<td><strong>30.78</strong></td>
+<td>48.02</td>
+<td><strong>40.50</strong></td>
+<td>32.26</td>
+<td>46.28</td>
+</tr>
+</tbody></table></div>
+<div class="table-wrap" role="region" aria-label="L1 · OutdoorNav" tabindex="0"><table>
+<caption>L1 · OutdoorNav</caption><thead>
+<tr>
+<th scope="col">Method</th>
+<th scope="col">SR ↑</th>
+<th scope="col">SPL ↑</th>
+<th scope="col">DCR ↑</th>
+</tr></thead><tbody>
+<tr>
+<th scope="row">OmniNav-fast</th>
+<td>70.00</td>
+<td>66.15</td>
+<td>54.50</td>
+</tr>
+<tr>
+<th scope="row">SocialNav</th>
+<td>74.00</td>
+<td>70.23</td>
+<td>79.39</td>
+</tr>
+<tr class="agent-row">
+<th scope="row">MODULAR-Agent (O)</th>
+<td>74.00</td>
+<td>69.32</td>
+<td>55.35</td>
+</tr>
+<tr class="agent-row">
+<th scope="row"><strong>MODULAR-Agent (S)</strong></th>
+<td><strong>76.00</strong></td>
+<td><strong>70.60</strong></td>
+<td><strong>80.06</strong></td>
+</tr>
+</tbody></table></div>
+<p class="table-note">200 episodes per primitive. SR, SPL, and DCR are percentages; TL is in meters. Bold values reproduce the paper’s best-result formatting.</p>
+</div>
+<div id="result-panel-2" role="tabpanel" aria-labelledby="result-tab-2" tabindex="0" hidden>
+<div class="table-wrap" role="region" aria-label="I2O · Exit → OutdoorNav" tabindex="0"><table>
+<caption>I2O · Exit → OutdoorNav</caption><thead>
+<tr>
+<th scope="col">Method</th>
+<th scope="col">FSR ↑</th>
+<th scope="col">CSR ↑</th>
+<th scope="col">SPL ↑</th>
+<th scope="col">RC ↑</th>
+<th scope="col">DCR ↑</th>
+<th scope="col">C₁ ↑</th>
+<th scope="col">C₂ ↑</th>
+</tr></thead><tbody>
+<tr>
+<th scope="row">OmniNav + SocialNav</th>
+<td>14.00</td>
+<td>17.25</td>
+<td>11.90</td>
+<td>28.50</td>
+<td>42.24</td>
+<td>20.50</td>
+<td>68.29</td>
+</tr>
+<tr class="agent-row">
+<th scope="row"><strong>MODULAR-Agent (O + S)</strong></th>
+<td><strong>30.50</strong></td>
+<td><strong>36.50</strong></td>
+<td><strong>23.41</strong></td>
+<td><strong>51.32</strong></td>
+<td><strong>57.96</strong></td>
+<td><strong>42.50</strong></td>
+<td><strong>71.76</strong></td>
+</tr>
+</tbody></table></div>
+<div class="table-wrap" role="region" aria-label="O2I · OutdoorNav → Entrance" tabindex="0"><table>
+<caption>O2I · OutdoorNav → Entrance</caption><thead>
+<tr>
+<th scope="col">Method</th>
+<th scope="col">FSR ↑</th>
+<th scope="col">CSR ↑</th>
+<th scope="col">SPL ↑</th>
+<th scope="col">RC ↑</th>
+<th scope="col">DCR ↑</th>
+<th scope="col">C₁ ↑</th>
+<th scope="col">C₂ ↑</th>
+</tr></thead><tbody>
+<tr>
+<th scope="row">OmniNav + SocialNav</th>
+<td>12.50</td>
+<td>42.75</td>
+<td>8.78</td>
+<td><strong>82.93</strong></td>
+<td><strong>53.39</strong></td>
+<td><strong>73.00</strong></td>
+<td>17.12</td>
+</tr>
+<tr class="agent-row">
+<th scope="row"><strong>MODULAR-Agent (O + S)</strong></th>
+<td><strong>32.50</strong></td>
+<td><strong>52.00</strong></td>
+<td><strong>22.27</strong></td>
+<td>82.43</td>
+<td>51.92</td>
+<td>71.50</td>
+<td><strong>45.45</strong></td>
+</tr>
+</tbody></table></div>
+<p class="table-note">200 episodes per composition. All values are percentages. C₁ and C₂ are stage-conditional success rates in task order.</p>
+</div>
+<div id="result-panel-3" role="tabpanel" aria-labelledby="result-tab-3" tabindex="0" hidden>
+<div class="table-wrap" role="region" aria-label="L3 · Exit → OutdoorNav → Entrance → OVON" tabindex="0"><table>
+<caption>L3 · Exit → OutdoorNav → Entrance → OVON</caption><thead>
+<tr><th rowspan="2" scope="col">Method</th>
+<th colspan="5" scope="colgroup">Full mission</th>
+<th colspan="4" scope="colgroup">Stage-conditional success</th>
+</tr><tr>
+<th scope="col">FSR ↑</th>
+<th scope="col">CSR ↑</th>
+<th scope="col">SPL ↑</th>
+<th scope="col">RC ↑</th>
+<th scope="col">DCR ↑</th>
+<th scope="col">C₁ ↑</th>
+<th scope="col">C₂ ↑</th>
+<th scope="col">C₃ ↑</th>
+<th scope="col">C₄ ↑</th>
+</tr></thead><tbody>
+<tr>
+<th scope="row">OmniNav + SocialNav</th>
+<td>1.15</td>
+<td>14.22</td>
+<td>0.90</td>
+<td>35.62</td>
+<td>43.81</td>
+<td>29.89</td>
+<td>67.31</td>
+<td>28.57</td>
+<td>20.00</td>
+</tr>
+<tr class="agent-row">
+<th scope="row"><strong>MODULAR-Agent (O + S)</strong></th>
+<td><strong>4.02</strong></td>
+<td><strong>26.15</strong></td>
+<td><strong>1.08</strong></td>
+<td><strong>47.79</strong></td>
+<td><strong>56.05</strong></td>
+<td><strong>45.40</strong></td>
+<td><strong>79.75</strong></td>
+<td><strong>52.38</strong></td>
+<td><strong>21.21</strong></td>
+</tr>
+</tbody></table></div>
+<p class="table-note">174 episodes. All values are percentages. C₁–C₄ follow Exit, OutdoorNav, Entrance, and OVON. Full success requires all four stages.</p>
+</div>
+<!-- END GENERATED RESULTS -->
+      <details class="metric-definitions">
+        <summary>Metric definitions and policy assignments</summary>
+        <p><strong>SR</strong>: success rate. <strong>FSR</strong>: full success rate. <strong>CSR</strong>: mean fraction of stages completed as a valid ordered prefix. <strong>SPL</strong>: success-weighted path efficiency. <strong>TL</strong>: mean traveled distance in meters. <strong>RC</strong>: reference-route progress from the final position's planar projection. <strong>DCR</strong>: outdoor distance compliance rate. <strong>C<sub>k</sub></strong>: stage completion conditional on successful completion of all preceding stages.</p>
+        <p>L1 (O)/(S) denotes OmniNav/SocialNav executors; OutdoorNav (O) uses OmniNav-fast. L2/L3 (O + S) combines OmniNav for Exit, Entrance, and OVON with SocialNav for OutdoorNav. The fixed chain advances on executor completion proposals; MODULAR-Agent adds completion verification and bounded recovery. All table values except TL are percentages. Higher is better for these percentage metrics; TL is descriptive.</p>
+      </details>
+    </section>
+
+    <section id="failures" aria-labelledby="failures-title">
+      <h2 id="failures-title">Where Do Missions Break Down?</h2>
+      <p>Seeing outdoor space does not guarantee a valid exit; approaching a doorway does not guarantee entry. Visible objects can be missed, and repeated actions can leave a robot stuck. These cases motivate explicit completion verification and recovery.</p>
+      <figure><a class="figure-link" href="assets/images/failure-cases.webp" target="_blank" rel="noopener"><img src="assets/images/failure-cases.webp" alt="Eight primitive failure cases: missed and premature stopping on Exit, missed visible objects on OVON, failed entry on Entrance, and stagnation in vegetation on OutdoorNav." loading="lazy" decoding="async" width="2000" height="748"></a><figcaption>Representative L1 failures from the paper: Exit (a,b), OVON (c,d), Entrance (e–g), and OutdoorNav (h).</figcaption></figure>
+      <p>Stage-conditional evaluation reveals both early attrition and final-goal failures. For MODULAR-Agent, conditional success at the final OVON stage is <strong>21.21%</strong>, leaving efficient and reliable object search a substantial challenge.</p>
+    </section>
+
+    <section id="citation" aria-labelledby="citation-title">
+      <h2 id="citation-title">Citation</h2>
+      <div class="bibtex-block">
+        <div class="bibtex-toolbar"><span>BibTeX</span><button id="copy-bibtex" type="button">Copy</button></div>
+        <pre><code id="bibtex">@misc{shu2026i2o2inav,
+  title = {I2O2I-Nav: A Benchmark with a Modular Agent for
+           Long-Horizon Indoor-to-Outdoor-to-Indoor Navigation},
+  author = {Zhengjie Shu and Wanyu Li and Di Xiao and Lai Jiang
+            and Lingxin Jiang and Kaidi Hu and Xincheng Tang
+            and Wenkang Hu and Haoran Wang and Jinchuan Zhang
+            and Chang Chen and Wei Li and Jia Pan and Ruigang Yang},
+  year = {2026},
+  note = {Preprint},
+  url = {https://i2o2i-nav.github.io/}
+}</code></pre>
+        <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+    <footer>
+      <a href="#top">Back to top ↑</a>
+      <p>I2O2I-Nav · <a href="https://github.com/i2o2i-nav/i2o2i-nav.github.io" target="_blank" rel="noopener noreferrer">Website source</a></p>
+      <p>Page layout inspired by <a href="https://urbanverseproject.github.io/" target="_blank" rel="noopener noreferrer">UrbanVerse</a>.</p>
+    </footer>
+  </main>
+</body>
+</html>
