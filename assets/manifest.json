@@ -114,9 +114,9 @@
     },
     {
       "source": "arxiv/main.pdf",
-      "source_sha256": "e800e83df1c0323c520a15647046bbe128cf84cb1081cf253c571fe699c140df",
+      "source_sha256": "758c4eab063af180d30d20984d1c55974205ae03b7d3f0cde22f2bcac0017085",
       "output": "assets/papers/i2o2i-nav-arxiv.pdf",
-      "output_sha256": "e800e83df1c0323c520a15647046bbe128cf84cb1081cf253c571fe699c140df",
+      "output_sha256": "758c4eab063af180d30d20984d1c55974205ae03b7d3f0cde22f2bcac0017085",
       "operation": "Byte-for-byte copy of current arXiv manuscript, including author order and affiliations; no PDF edits."
     }
   ]

@@ -28,7 +28,7 @@ The demonstration illustrates the environment and task stages. It is not a MODUL
 
 ## Editing
 
-Edit prose and author information directly in `index.html`; adjust styles in `style.css`. The `arXiv` resource button is intentionally disabled until the official URL is available. Replace it with an anchor when that URL is provided; retain the separate `Paper PDF` download. Also update the BibTeX record with the official identifier then. No arXiv identifier or conference acceptance is assumed in this version.
+Edit prose and author information directly in `index.html`; adjust styles in `style.css`. The `arXiv` resource button links to <https://arxiv.org/pdf/2610.18307>. The separate `Paper PDF` button has been removed. BibTeX uses arXiv identifier `2610.18307`, primary category `cs.RO`, and the abstract-page URL. No conference acceptance is assumed.
 
 The code button points to <https://github.com/i2o2i-nav/i2o2i_nav>.
 
